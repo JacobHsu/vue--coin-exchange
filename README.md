@@ -2,6 +2,12 @@
 
 > A Vue.js project
 
+`vue init webpack vue-webpack-exchange`
+
+## References
+
+[CoinExchange](https://gitee.com/cexchange/CoinExchange)
+
 ## Build Setup
 
 ``` bash
