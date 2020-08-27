@@ -59,7 +59,7 @@ export default {
   },
   computed: {
     activeNav: function() {
-      return 'nav'
+      return this.$store.state.activeNav
     }
   },
   watch: {

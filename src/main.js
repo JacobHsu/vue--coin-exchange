@@ -6,11 +6,26 @@ import VueI18n from 'vue-i18n'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 import router from './router'
+import store from './store'
+import vueResource from 'vue-resource'
+import Api from './config/api'
 
 Vue.config.productionTip = false
 
 Vue.use(iView)
 Vue.use(VueI18n)
+Vue.use(vueResource)
+
+Vue.prototype.host = 'http://49.234.13.106:8801' // "https://api.xxxx.com"
+
+Vue.prototype.api = Api
+
+Vue.http.options.credentials = true
+Vue.http.options.emulateJSON = true
+Vue.http.options.headers = {
+  // 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+  'Content-Type': 'application/json;charset=utf-8'
+}
 
 iView.LoadingBar.config({
   color: '#F90',
@@ -41,6 +56,7 @@ new Vue({
   el: '#app',
   i18n,
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

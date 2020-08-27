@@ -10,6 +10,15 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+      path: '/exchange',
+      component: resolve => require(['../pages/exchange/exchange'], resolve)
+    },
+    {
+      path: '/exchange/:pair',
+      component: resolve => require(['../pages/exchange/exchange'], resolve),
+      name: 'ExchangePair'
     }
   ]
 })
